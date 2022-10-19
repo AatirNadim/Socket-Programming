@@ -29,8 +29,15 @@ def encrypt(text, key) :
     return("" . join(result))
 
 
-str = encrypt(str, int(val))
+str1 = encrypt(str, int(val))
 print(f'the encryped message from the user is -->\n{str}')
-skt.send(str.encode('utf-8'))
+skt.send(str1.encode('utf-8'))
 # skt.send(val.encode('utf-8'))
+temp = skt.recv(2048).decode('utf-8')
+print('decoded value recieved from the server -->')
+print(temp)
+if temp == str :
+    print('values match')
+else:
+    print('values do not match')
 skt.close()

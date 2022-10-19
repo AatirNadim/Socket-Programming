@@ -57,4 +57,5 @@ while True:
     str = decrypt(str, val)
     print('decoded message recieved from the client -->')
     print(str)
+    cl.send(str.encode('utf-8'))
     # print('')
